@@ -8,6 +8,7 @@
         <module>spring-boot-applicaton</module>
         <module>spring-boot-kafka</module>
         <module>spring-boot-gateway</module>
+        <module>spring-boot-customStarter</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -72,9 +73,16 @@
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring.boot.version}</version>
             </dependency>
+            <!--定义自定义starter时用来读取需要自动读取的配置-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <!--可以在properties文件添加配置时，提示配置项-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
                 <version>${spring.boot.version}</version>
             </dependency>
             <dependency>

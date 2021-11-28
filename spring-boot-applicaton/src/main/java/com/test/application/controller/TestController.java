@@ -3,6 +3,7 @@ package com.test.application.controller;
 
 import com.test.application.service.TestDataSource2Service;
 import com.test.application.service.TestService;
+import com.test.custom.config.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,9 @@ public class TestController {
 
     @Autowired
     private TestDataSource2Service testDataSource2Service;
+
+    @Autowired
+    private DemoService demoService;
 
 
     @GetMapping("feign")
@@ -36,5 +40,11 @@ public class TestController {
     @RequestMapping("savedata")
     public String saveData(){
         return testDataSource2Service.setData()+"";
+    }
+
+
+    @GetMapping("cumstom")
+    public String cumstomStarter(){
+        return demoService.getName()+","+demoService.getDate();
     }
 }
