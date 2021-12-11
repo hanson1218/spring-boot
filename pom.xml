@@ -9,6 +9,7 @@
         <module>spring-boot-kafka</module>
         <module>spring-boot-gateway</module>
         <module>spring-boot-customStarter</module>
+        <module>spring-boot-redis</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -31,6 +32,7 @@
         <nacos.version>2021.1</nacos.version>
         <gateway.version>3.0.0</gateway.version>
         <openfeign.version>3.0.0</openfeign.version>
+        <sentinel.version>2021.1</sentinel.version>
     </properties>
 
     <dependencyManagement>
@@ -79,7 +81,7 @@
                 <artifactId>spring-boot-autoconfigure</artifactId>
                 <version>${spring.boot.version}</version>
             </dependency>
-            <!--可以在properties文件添加配置时，提示配置项-->
+            <!--可以在properties文件添加配置时，动态提示配置项-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-configuration-processor</artifactId>
@@ -124,6 +126,25 @@
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
                 <version>${openfeign.version}</version>
             </dependency>
+            <!--spring cloud gateway整合sentinel的依赖-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+                <version>${sentinel.version}</version>
+            </dependency>
+            <!--sentinel的依赖-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+                <version>${sentinel.version}</version>
+            </dependency>
+            <!-- 引入redis缓存 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
             <!--工具类-->
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>

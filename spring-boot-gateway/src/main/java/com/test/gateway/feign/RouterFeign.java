@@ -1,6 +1,8 @@
 package com.test.gateway.feign;
 
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.test.gateway.sentinel.SentinelExceptionHandler;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface RouterFeign {
 
     //和application应用的接口路径保持一致
+    @SentinelResource(value = "/test/feign", blockHandlerClass= SentinelExceptionHandler.class, blockHandler = "handlerA")
     @GetMapping("/test/feign")
     String feign();
 }
