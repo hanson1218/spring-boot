@@ -1,4 +1,4 @@
-package com.test.gateway.config;
+package com.test.gateway.common.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

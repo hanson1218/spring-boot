@@ -1,6 +1,6 @@
 package com.test.gateway.filter;
 
-import com.test.gateway.feign.RouterFeign;
+import com.test.gateway.common.constant.FilterOrder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
@@ -11,9 +11,9 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 @Component
-public class GlobalFilter implements GatewayFilter, Ordered {
+public class GlobalCustomFilter implements GatewayFilter, Ordered {
 
-    private static Logger logger = LoggerFactory.getLogger(GlobalFilter.class);
+    private static Logger logger = LoggerFactory.getLogger(GlobalCustomFilter.class);
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -24,6 +24,6 @@ public class GlobalFilter implements GatewayFilter, Ordered {
 
     @Override
     public int getOrder() {
-        return 0;
+        return FilterOrder.GLOBAL_ORDER;
     }
 }
