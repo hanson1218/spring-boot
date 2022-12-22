@@ -33,6 +33,10 @@
           <artifactId>spring-context</artifactId>
       </dependency>
       <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-tx</artifactId>
+      </dependency>
+      <dependency>
           <groupId>org.apache.commons</groupId>
           <artifactId>commons-lang3</artifactId>
           <version>3.12.0</version>
@@ -61,6 +65,12 @@
           <groupId>org.springframework</groupId>
           <artifactId>spring-web</artifactId>
       </dependency>
+
+      <dependency>
+          <groupId>cn.hutool</groupId>
+          <artifactId>hutool-all</artifactId>
+      </dependency>
+
 
   </dependencies>
 
